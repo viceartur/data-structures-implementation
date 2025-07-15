@@ -1,1 +1,15 @@
-In the repository, you can find my implementation of different data structures (aka ADT) using GoLang.
+# Data Structures in Go
+
+This repository contains my implementation of various core **Abstract Data Types (ADTs)** using **Go (Golang)**.
+Each data structure is written from scratch to deepen understanding of internal mechanisms and algorithms.
+
+## Implemented Data Structures
+
+- **Binary Search Tree (BST)**  
+  Supports insertion, search, deletion, and DFS traversals.
+
+- **Linked List**  
+  Singly linked list implementation with basic operations such as insertion, and traversal.
+
+- **Minimum Heap (Min-Heap)**  
+  Heap-based priority queue supporting insert and extract-min operations.
