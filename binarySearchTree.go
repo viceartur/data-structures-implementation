@@ -1,15 +1,11 @@
 package main
 
-import "log"
+import "fmt"
 
 type TreeNode struct {
 	data  int
 	left  *TreeNode
 	right *TreeNode
-}
-
-func binarySearchTree() *TreeNode {
-	return &TreeNode{}
 }
 
 // Insert method recursively calls itself and adds the new node where needed.
@@ -33,7 +29,7 @@ func (node *TreeNode) Insert(data int) *TreeNode {
 // Search looks for a node with the given data and returns it if found, otherwise returns nil.
 func (node *TreeNode) Search(data int) *TreeNode {
 	if node == nil {
-		log.Println("Node not found.")
+		fmt.Println("Node not found.")
 		return nil
 	}
 
@@ -42,7 +38,7 @@ func (node *TreeNode) Search(data int) *TreeNode {
 	} else if data > node.data {
 		return node.right.Search(data)
 	} else {
-		log.Println("Node found:", data)
+		fmt.Println("Node found:", data)
 		return node
 	}
 }
@@ -62,7 +58,7 @@ func (node *TreeNode) MinValueNode() *TreeNode {
 // 3. If the node has both right and left child nodes: Find the node's in-order successor, change values with that node, then delete it.
 func (node *TreeNode) Delete(data int) *TreeNode {
 	if node == nil {
-		log.Println("Node not found.")
+		fmt.Println("Node not found.")
 		return nil
 	}
 
@@ -87,4 +83,34 @@ func (node *TreeNode) Delete(data int) *TreeNode {
 	}
 
 	return node
+}
+
+// InOrderTraversal traverses the tree in-order Left-Root-Right.
+func (node *TreeNode) InOrderTraversal() {
+	if node == nil {
+		return
+	}
+	node.left.InOrderTraversal()
+	fmt.Println(node.data)
+	node.right.InOrderTraversal()
+}
+
+// PreOrderTraversal traverses the tree pre-order Root-Left-Right.
+func (node *TreeNode) PreOrderTraversal() {
+	if node == nil {
+		return
+	}
+	fmt.Println(node.data)
+	node.left.PreOrderTraversal()
+	node.right.PreOrderTraversal()
+}
+
+// PostOrderTraversal traverses the tree post-order Left-Right-Root.
+func (node *TreeNode) PostOrderTraversal() {
+	if node == nil {
+		return
+	}
+	node.left.PostOrderTraversal()
+	node.right.PostOrderTraversal()
+	fmt.Println(node.data)
 }
