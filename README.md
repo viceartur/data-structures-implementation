@@ -5,11 +5,14 @@ Each data structure is written from scratch to deepen understanding of internal 
 
 ## Implemented Data Structures
 
-- **Binary Search Tree (BST)**  
-  Supports insertion, search, deletion, and DFS traversals.
-
 - **Linked List**  
   Singly linked list implementation with basic operations such as insertion, and traversal.
 
+- **Binary Search Tree (BST)**  
+  Supports insertion, search, deletion, and DFS traversals.
+
 - **Minimum Heap (Min-Heap)**  
   Heap-based priority queue supporting insert and extract-min operations.
+
+- **AVL Tree**  
+  Supports insertion, deletion, and In-Order traversal.
