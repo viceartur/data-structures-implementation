@@ -82,4 +82,5 @@ func main() {
 	graph.AddEdge(0, 3, 4) // A - D weight 4
 	graph.AddEdge(1, 2, 1) // B - C weight 1
 	graph.Print()
+	graph.DFS("C")
 }

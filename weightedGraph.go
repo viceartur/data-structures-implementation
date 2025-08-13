@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"slices"
 )
 
 type Graph struct {
@@ -33,6 +34,28 @@ func (graph *Graph) AddEdge(from int, to int, weight int) {
 		graph.adjMatrix[from][to] = weight
 		graph.adjMatrix[to][from] = weight
 	}
+}
+
+// dfsSearch is a helper function for performing a depth-first search (DFS) recursively.
+// It marks the current vertex as visited and prints its label, then recursively visits all
+// adjacent unvisited vertices.
+func (graph *Graph) dfsSearch(index int, visited []bool) {
+	visited[index] = true
+	fmt.Printf("%s, ", graph.vertices[index])
+
+	for i := range graph.size {
+		if graph.adjMatrix[index][i] != 0 && !visited[i] {
+			graph.dfsSearch(i, visited)
+		}
+	}
+}
+
+// DFS starts a depth-first search (DFS) traversal from the vertex with the given label.
+// It initializes the visited slice and finds the start index, then calls dfsSearch.
+func (graph *Graph) DFS(startVertex string) {
+	visited := make([]bool, graph.size)
+	startIndex := slices.Index(graph.vertices, startVertex)
+	graph.dfsSearch(startIndex, visited)
 }
 
 // Print displays the adjacency list of the graph, showing each vertex
