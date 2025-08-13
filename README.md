@@ -17,5 +17,5 @@ Each data structure is written from scratch to deepen understanding of internal 
 - **AVL Tree**  
   Supports insertion, deletion, and In-Order traversal.
 
-- **Graph**  
+- **Weighted Graph**  
   Supports adding vertices and edges, performs DFS (Depth-First Search).
