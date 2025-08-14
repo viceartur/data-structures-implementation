@@ -5,16 +5,14 @@ import (
 )
 
 func main() {
-	// Linked List Test
-
+	// Linked List
 	list := List[any]{}
 	list.setNode("Pete")
 	list.setNode("Kris")
 	list.setNode("Jamie")
 	list.print()
 
-	// Priority Queue (Min Heap) Test
-
+	// Priority Queue (Min Heap)
 	heap := Heap[string]{}
 	heap.push(100, "this is hundred alright?")
 	heap.push(50, "should be faster than hundred")
@@ -26,8 +24,7 @@ func main() {
 	fmt.Printf("top dequeued: %s \n", heap.pop().message)
 	heap.print()
 
-	// BST test cases
-
+	// BST
 	var root *TreeNode
 	root = root.Insert(10)
 	root = root.Insert(5)
@@ -53,7 +50,6 @@ func main() {
 	root.Search(10)
 
 	// AVL Tree
-
 	var rootAVL *AVLTreeNode
 	rootAVL = rootAVL.Insert(5)
 	rootAVL = rootAVL.Insert(6)
@@ -70,17 +66,16 @@ func main() {
 	rootAVL.InOrderTraversal()
 
 	// Graph
-
-	// A - B - C
 	graph := GraphInit(4)
 	graph.AddVertex(0, "A")
 	graph.AddVertex(1, "B")
 	graph.AddVertex(2, "C")
 	graph.AddVertex(3, "D")
 	graph.AddEdge(0, 1, 3) // A - B weight 3
-	graph.AddEdge(1, 2, 2) // A - C weight 2
+	graph.AddEdge(0, 2, 2) // A - C weight 2
 	graph.AddEdge(0, 3, 4) // A - D weight 4
 	graph.AddEdge(1, 2, 1) // B - C weight 1
 	graph.Print()
 	graph.DFS("C")
+	graph.BFS("A")
 }

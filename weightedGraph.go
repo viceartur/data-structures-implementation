@@ -58,6 +58,31 @@ func (graph *Graph) DFS(startVertex string) {
 	graph.dfsSearch(startIndex, visited)
 }
 
+// BFS performs a breadth-first search (BFS) traversal starting from the given vertex label.
+// It uses a queue to visit all vertices reachable from the start vertex, printing each as it is visited.
+func (graph *Graph) BFS(startVertex string) {
+	queue := []int{}
+	// Add the start vertex index to the queue
+	queue = append(queue, slices.Index(graph.vertices, startVertex))
+
+	visited := make([]bool, graph.size)
+	visited[queue[0]] = true // Mark the start vertex as visited
+
+	for len(queue) > 0 {
+		currVertexIndex := queue[0]                         // Get the first element in the queue
+		queue = queue[1:]                                   // Remove it from the queue
+		fmt.Printf("%s, ", graph.vertices[currVertexIndex]) // Print the current visited vertex
+
+		// Visit all adjacent unvisited vertices
+		for i := range graph.size {
+			if graph.adjMatrix[currVertexIndex][i] > 0 && !visited[i] {
+				queue = append(queue, i)
+				visited[i] = true
+			}
+		}
+	}
+}
+
 // Print displays the adjacency list of the graph, showing each vertex
 // and its connected vertices along with the edge weights.
 func (graph *Graph) Print() {
