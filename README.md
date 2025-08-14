@@ -18,4 +18,4 @@ Each data structure is written from scratch to deepen understanding of internal 
   Supports insertion, deletion, and In-Order traversal.
 
 - **Weighted Graph**  
-  Supports adding vertices and edges, performs DFS (Depth-First Search).
+  Supports adding vertices and edges, performs DFS (Depth-First Search) and BFS (Breadth-First Search).
